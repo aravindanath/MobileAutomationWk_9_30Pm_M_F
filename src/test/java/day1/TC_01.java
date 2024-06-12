@@ -56,8 +56,8 @@ public class TC_01 extends BaseClass{
             driver.context(co);
         }
 
-     //   driver.context("WEBVIEW_com.androidsample.generalstore");
-        driver.findElement(By.name("q")).sendKeys("Appium jobs", Keys.ENTER);
+        driver.context("WEBVIEW_com.androidsample.generalstore");
+        driver.findElement(By.xpath("//textarea[@class='gLFyf']")).sendKeys("Appium jobs", Keys.ENTER);
 
     }
 }

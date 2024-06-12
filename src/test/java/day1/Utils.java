@@ -22,4 +22,17 @@ public class Utils {
         TouchAction action = new TouchAction((PerformsTouchActions) driver);
         action.tap(ElementOption.element(element)).release().perform();
     }
+
+    public static  void scrollToText(AndroidDriver driver, String text){
+        String textPath ="new UiScrollable(new UiSelector()).scrollIntoView(new UiSelector().textContains(\""+text+"\"));";
+        driver.findElementByAndroidUIAutomator(textPath);
+
+    }
+    public static  void scrollToTextClick(AndroidDriver driver, String text){
+        String textPath ="new UiScrollable(new UiSelector()).scrollIntoView(new UiSelector().textContains(\""+text+"\"));";
+        driver.findElementByAndroidUIAutomator(textPath).click();
+
+    }
+
+
 }
