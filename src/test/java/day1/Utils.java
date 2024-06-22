@@ -35,4 +35,22 @@ public class Utils {
     }
 
 
+    public static String getOTP(String msg){
+        String otp = null;
+        System.out.println(msg);
+        for(String x : msg.split(" ")){
+            if(x.matches("\\d{6}")){
+                System.out.println(x);
+                otp =x;
+            }else if(x.matches("\\d{4}")){
+                System.out.println(x);
+                otp =x;
+            }else {
+                System.out.println("Wrong OTP");
+                System.out.println(x);
+            }
+        }
+        return otp;
+    }
+
 }
