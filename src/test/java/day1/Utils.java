@@ -1,14 +1,23 @@
 package day1;
 
+import com.google.common.collect.ImmutableList;
+import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.MobileDriver;
 import io.appium.java_client.PerformsTouchActions;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.touch.LongPressOptions;
 import io.appium.java_client.touch.offset.ElementOption;
 import io.appium.java_client.touch.offset.PointOption;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.PointerInput;
+import org.openqa.selenium.interactions.Sequence;
 import org.openqa.selenium.interactions.touch.TouchActions;
+
+import java.time.Duration;
 
 public class Utils {
 
@@ -53,4 +62,11 @@ public class Utils {
         return otp;
     }
 
+    public static void dragNDrop(WebDriver driver, WebElement element1, WebElement element2 ){
+        TouchAction action = new TouchAction((MobileDriver) driver);
+        action.longPress(ElementOption.element(element1))
+                .moveTo(ElementOption.element(element2))
+                .release()
+                .perform();
+    }
 }
